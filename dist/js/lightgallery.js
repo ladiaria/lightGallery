@@ -310,9 +310,9 @@
             '<div class="lg-inner">' + list + '</div>' +
             '<div class="lg-toolbar lg-group">' +
             '<span class="lg-close lg-icon"></span>' +
-            '</div>' +
             controls +
             subHtmlCont +
+            '</div>' +
             '</div>' +
             '</div>';
 
