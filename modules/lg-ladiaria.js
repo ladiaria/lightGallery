@@ -7,7 +7,8 @@ var $lgOptions = {
     share: true,
     thumbnail: false,
     download: false,
-    hideBarsDelay: 10000,
+    hideBarsDelay: 99999999,
+    useLeft: true,
 };
 
 $lg.lightGallery($lgOptions);
@@ -25,7 +26,7 @@ $lg.on('onSlideClick.lg',function(event){
 });
 
 $lg.on('onAfterOpen.lg',function(event){
-   $('.lg-toolbar').append('<a class=\"lg-icon\" href=\"javascript:toggleCaption()\">CC</a>');
+   $('.lg-controls-wrapper').append('<a class=\"lg-icon lg-caption-icon\" href=\"javascript:toggleCaption()\">CC</a>');
    $('.lg').addClass('lg-caption-active');
 });
 

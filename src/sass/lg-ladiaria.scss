@@ -1,0 +1,69 @@
+
+.lg-caption-active{
+  .lg-toolbar{
+    width: 400px;
+  }
+  .lg-img-wrap{
+    padding-right: 400px;
+  }
+  .lg-sub-html{
+    filter: alpha(opacity=1);
+    opacity: 1;
+    display: block;
+    @include transition(opacity .3s ease-in-out);
+  }
+}
+.lg-actions{
+  top: 0;
+  height: unset;
+  display: inline
+}
+.lg-sub-html{
+  position: absolute;
+  top: 60px;
+  overflow: auto;
+  height: 100%;
+  overflow: auto;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  display: none;
+  @include transition(opacity .3s ease-in-out);
+  z-index: 0;
+}
+.lg-hide-items{
+  .lg-img-wrap{
+    padding-right: 0rem;
+  }
+}
+
+.lg-toolbar{
+  left: auto;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  .lg-counter, .lg-share, .lg-caption-icon, .lg-actions{
+    display: inline;
+    position: relative;
+  }
+  .lg-icon, .lg-share{
+    float: none;
+    height: 80px;
+    line-height: 60px;
+    width: 80px;
+    font-size: 24px;
+    padding: 10px;
+    background: none;
+    display: inline;
+  }
+  .lg-actions .lg-icon{
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    margin-top: 0;
+  }
+}
+
+.lg-progress-bar .lg-progress{
+  background-color: $primary-color !important;
+}
