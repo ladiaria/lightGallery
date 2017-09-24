@@ -309,10 +309,10 @@
             '<div class="lg" style="width:' + this.s.width + '; height:' + this.s.height + '">' +
             '<div class="lg-inner">' + list + '</div>' +
             '<div class="lg-toolbar lg-group">' +
-              subHtmlCont +
-              controls +
-              '<span class="lg-close lg-icon"></span>' +
+            '<span class="lg-close lg-icon"></span>' +
+            controls +
             '</div>' +
+            subHtmlCont +
             '</div>' +
             '</div>';
 

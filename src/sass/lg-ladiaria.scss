@@ -1,16 +1,12 @@
-
+.lg-backdrop{
+  background: $off-black
+}
 .lg-caption-active{
-  .lg-toolbar{
-    width: 400px;
-  }
   .lg-img-wrap{
     padding-right: 400px;
   }
   .lg-sub-html{
-    filter: alpha(opacity=1);
-    opacity: 1;
-    display: block;
-    @include transition(opacity .3s ease-in-out);
+    right: 80px;
   }
 }
 .lg-actions{
@@ -20,15 +16,18 @@
 }
 .lg-sub-html{
   position: absolute;
-  top: 60px;
+  top: 0px;
+  right: -300px;
+  width: 300px;
+  padding: 20px;
+  background: $off-black-1;
+  position: absolute;
+  left: auto;
   overflow: auto;
   height: 100%;
   overflow: auto;
-  filter: alpha(opacity=0);
-  opacity: 0;
-  display: none;
-  @include transition(opacity .3s ease-in-out);
   z-index: 0;
+  text-align: left;
 }
 .lg-hide-items{
   .lg-img-wrap{
@@ -41,19 +40,26 @@
   right: 0;
   bottom: 0;
   width: 80px;
-  .lg-counter, .lg-share, .lg-caption-icon, .lg-actions{
-    display: inline;
-    position: relative;
-  }
+  background: $off-black-1;
+  border-left: 1px solid $off-black;
+  text-align: center;
+  // .lg-counter, .lg-share, .lg-caption-icon, .lg-actions{
+  //   display: inline;
+  //   position: relative;
+  //   width: 80px;
+  // }
   .lg-icon, .lg-share{
     float: none;
-    height: 80px;
+    height: 60px;
     line-height: 60px;
-    width: 80px;
+    width: 60px;
     font-size: 24px;
     padding: 10px;
     background: none;
     display: inline;
+  }
+  #lg-counter{
+    padding: 20px;
   }
   .lg-actions .lg-icon{
     position: relative;

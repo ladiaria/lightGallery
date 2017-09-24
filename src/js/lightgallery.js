@@ -291,9 +291,9 @@
             '<div class="lg-inner">' + list + '</div>' +
             '<div class="lg-toolbar lg-group">' +
             '<span class="lg-close lg-icon"></span>' +
-            '</div>' +
             controls +
             subHtmlCont +
+            '</div>' +
             '</div>' +
             '</div>';
 
@@ -455,7 +455,7 @@
      */
     Plugin.prototype.counter = function() {
         if (this.s.counter) {
-            $(this.s.appendCounterTo).append('<div id="lg-counter"><span id="lg-counter-current">' + (parseInt(this.index, 10) + 1) + '</span> / <span id="lg-counter-all">' + this.$items.length + '</span></div>');
+            $(this.s.appendCounterTo).prepend('<div id="lg-counter"><span id="lg-counter-current">' + (parseInt(this.index, 10) + 1) + '</span> / <span id="lg-counter-all">' + this.$items.length + '</span></div>');
         }
     };
 

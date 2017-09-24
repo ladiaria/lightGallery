@@ -8,7 +8,8 @@ var $lgOptions = {
     thumbnail: false,
     download: false,
     hideBarsDelay: 99999999,
-    useLeft: true,
+    appendCounterTo: '.lg-actions',
+    subHtmlSelectorRelative: true,
 };
 
 $lg.lightGallery($lgOptions);
@@ -26,7 +27,7 @@ $lg.on('onSlideClick.lg',function(event){
 });
 
 $lg.on('onAfterOpen.lg',function(event){
-   $('.lg-controls-wrapper').append('<a class=\"lg-icon lg-caption-icon\" href=\"javascript:toggleCaption()\">CC</a>');
+   $('.lg-actions').append('<a class=\"lg-icon lg-caption-icon\" href=\"javascript:toggleCaption()\"><i class="material-icons">chrome_reader_mode</i></a>');
    $('.lg').addClass('lg-caption-active');
 });
 
