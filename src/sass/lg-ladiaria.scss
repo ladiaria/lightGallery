@@ -73,3 +73,41 @@
 .lg-progress-bar .lg-progress{
   background-color: $primary-color !important;
 }
+
+@media (max-width : 1000px) {
+  .lg-toolbar{
+    display: none;
+    visibility: hidden;
+  }
+  .lg-caption-active{
+    .lg-toolbar{
+      position: absolute;
+      top: auto;
+      right: 0;
+      width: 100%;
+      left: 0;
+      height: 200px;
+      display: block;
+      visibility: visible;
+      text-align: left;
+      .lg-next, .lg-prev, .lg-caption-icon{
+        display: none;
+        visibility: hidden;
+      }
+    }
+    .lg-img-wrap{
+      padding-right: 5px;
+    }
+    .lg-sub-html{
+      right: 0px;
+      width: 100%;
+      bottom: auto;
+      top: 60px;
+    }
+    .lg-icons{
+      float: left;
+    }
+    .lg-close{
+    }
+  }
+}
