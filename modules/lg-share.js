@@ -2,6 +2,7 @@
 * http://sachinchoolur.github.io/lightGallery
 * Copyright (c) 2016 Sachin N; Licensed GPLv3 */
 
+
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
@@ -48,15 +49,23 @@
 
     Share.prototype.init = function() {
         var _this = this;
-        var shareHtml = '<span id="lg-share" class="lg-icon">' +
-            '<ul class="lg-dropdown" style="position: absolute;">';
-        shareHtml += _this.core.s.facebook ? '<li><a id="lg-share-facebook" target="_blank"><span class="lg-icon"></span><span class="lg-dropdown-text">' + this.core.s.facebookDropdownText + '</span></a></li>' : '';
-        shareHtml += _this.core.s.twitter ? '<li><a id="lg-share-twitter" target="_blank"><span class="lg-icon"></span><span class="lg-dropdown-text">' + this.core.s.twitterDropdownText + '</span></a></li>' : '';
-        shareHtml += _this.core.s.googlePlus ? '<li><a id="lg-share-googleplus" target="_blank"><span class="lg-icon"></span><span class="lg-dropdown-text">' + this.core.s.googlePlusDropdownText + '</span></a></li>' : '';
-        shareHtml += _this.core.s.pinterest ? '<li><a id="lg-share-pinterest" target="_blank"><span class="lg-icon"></span><span class="lg-dropdown-text">' + this.core.s.pinterestDropdownText + '</span></a></li>' : '';
-        shareHtml += '</ul></span>';
+        var shareHtml = '<ul id="lg-share-flat">';
+        shareHtml += _this.core.s.facebook ? '<li><a id="lg-share-facebook" target="_blank"><span class="lg-icon"></span></a></li>' : '';
+        shareHtml += _this.core.s.twitter ? '<li><a id="lg-share-twitter" target="_blank"><span class="lg-icon"></span></a></li>' : '';
+        shareHtml += _this.core.s.googlePlus ? '<li><a id="lg-share-googleplus" target="_blank"><span class="lg-icon"></span></a></li>' : '';
+        shareHtml += _this.core.s.pinterest ? '<li><a id="lg-share-pinterest" target="_blank"><span class="lg-icon"></span></a></li>' : '';
+        shareHtml += '</ul>';
 
-        this.core.$outer.find('.lg-toolbar').append(shareHtml);
+        var shareHtmlDropdown = '<span id="lg-share" class="lg-icon">' +
+            '<ul class="lg-dropdown" style="position: absolute;">';
+        shareHtmlDropdown += _this.core.s.facebook ? '<li><a id="lg-share-facebook" target="_blank"><span class="lg-icon"></span><span class="lg-dropdown-text">' + this.core.s.facebookDropdownText + '</span></a></li>' : '';
+        shareHtmlDropdown += _this.core.s.twitter ? '<li><a id="lg-share-twitter" target="_blank"><span class="lg-icon"></span><span class="lg-dropdown-text">' + this.core.s.twitterDropdownText + '</span></a></li>' : '';
+        shareHtmlDropdown += _this.core.s.googlePlus ? '<li><a id="lg-share-googleplus" target="_blank"><span class="lg-icon"></span><span class="lg-dropdown-text">' + this.core.s.googlePlusDropdownText + '</span></a></li>' : '';
+        shareHtmlDropdown += _this.core.s.pinterest ? '<li><a id="lg-share-pinterest" target="_blank"><span class="lg-icon"></span><span class="lg-dropdown-text">' + this.core.s.pinterestDropdownText + '</span></a></li>' : '';
+        shareHtmlDropdown += '</ul></span>';
+
+        this.core.$outer.find('.lg-actions').after(shareHtml);
+        this.core.$outer.find('.lg-toolbar').append(shareHtmlDropdown);
         this.core.$outer.find('.lg').append('<div id="lg-dropdown-overlay"></div>');
         $('#lg-share').on('click.lg', function(){
             _this.core.$outer.toggleClass('lg-dropdown-active');
@@ -68,7 +77,7 @@
 
         _this.core.$el.on('onAfterSlide.lg.tm', function(event, prevIndex, index) {
 
-            setTimeout(function() { 
+            setTimeout(function() {
                 $('#lg-share-facebook').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + (encodeURIComponent(_this.core.$items.eq(index).attr('data-facebook-share-url') || window.location.href)));
 
                 $('#lg-share-twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + _this.core.$items.eq(index).attr('data-tweet-text') + '&url=' + (encodeURIComponent(_this.core.$items.eq(index).attr('data-twitter-share-url') || window.location.href)));

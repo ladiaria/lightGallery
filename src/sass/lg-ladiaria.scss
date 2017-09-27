@@ -48,7 +48,7 @@
   //   position: relative;
   //   width: 80px;
   // }
-  .lg-icon, .lg-share{
+  .lg-icon, .lg-share, .lg-actions{
     float: none;
     height: 60px;
     line-height: 60px;
@@ -57,9 +57,25 @@
     padding: 10px;
     background: none;
     display: inline;
+    vertical-align: middle;
   }
   #lg-counter{
-    padding: 20px;
+    padding: 0;
+  }
+  #lg-share{
+    display: block;
+    visibility: visible;
+    position: relative;
+    .lg-dropdown a{
+      line-height: 25px;
+    }
+  }
+  #lg-share-flat{
+    display: none;
+    visibility: hidden;
+    li{
+      display: inline;
+    }
   }
   .lg-actions .lg-icon{
     position: relative;
@@ -94,6 +110,14 @@
         display: none;
         visibility: hidden;
       }
+      #lg-share-flat{
+        display: inline;
+        visibility: visible;
+      }
+      #lg-share{
+        display: none;
+        visibility: hidden;
+      }
     }
     .lg-img-wrap{
       padding-right: 5px;
@@ -103,6 +127,8 @@
       width: 100%;
       bottom: auto;
       top: 60px;
+      padding-top: 0;
+      height: 120px;
     }
     .lg-icons{
       float: left;
